@@ -1,0 +1,149 @@
+.navbar{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  max-height: 68px;
+  padding: 0 15px;
+  background-color: #f1f4f7;
+  position: fixed;
+  z-index: 10;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.logo{
+  display: inline-flex;
+}
+
+.nav-inputs{
+  flex: 90%;
+  display: flex;
+  height: 100%;
+  gap: 15px;
+  padding: 10px;
+}
+
+.nav-inputs div{
+  display: inline-flex;
+  height: 100%;
+  border: 2px solid #004952;
+  border-radius: 5px;
+}
+
+.nav-inputs div input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.nav-inputs div:has(input:focus){
+  border: 2px solid #23e5db;
+}
+
+.locations{
+  flex: 25%;
+}
+
+.search-location{
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+}
+
+.locations input{
+  padding: 0 5px !important;
+}
+
+.location-expand{
+  background-color: white;
+  padding: 10px;
+}
+
+.search{
+  flex: 60%;
+}
+
+.search-icon{
+  display: inline-flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #004952;
+  color: white;
+}
+
+.nav-actions{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 33%;
+  padding-left: 20px;
+}
+
+.login-btn{
+  display: inline-flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 18px;
+  color: #004952;
+  cursor: pointer;
+}
+
+.login-btn:hover div:last-child{
+  background-color: transparent;
+}
+
+.login-btn div:last-child{
+  height: 2px;
+  width: 100%;
+  background-color: #004952;
+}
+
+.language-btn{
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #004952;
+}
+
+.sell-view-box{
+  fill: #ffce32;
+}
+.path_1{
+  fill: white;
+}
+
+.path_2{
+  fill: #ffce32;
+}
+.path_3{
+  fill: #23e5db;
+}
+.path_4{
+  fill: #3a77ff;
+}
+.sell-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+}
+.sell{
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+}
+.sell span{
+  display: inline-flex;
+}

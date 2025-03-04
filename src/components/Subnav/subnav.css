@@ -1,0 +1,38 @@
+.subnav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  top: 70px;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.subnav ul{
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  max-width: 1200px;
+  width: 100%;
+  list-style-type: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #002f34;
+}
+
+.subnav ul li{
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.subnav ul li:first-child{
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 5px;
+}
+
+.subnav ul li:hover{
+  transform: scale(1.05);
+}

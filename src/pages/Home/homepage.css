@@ -1,0 +1,51 @@
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 88%;
+}
+
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px 0 60px;
+  width: 100%;
+}
+
+.product-list-title{
+  text-align: left;
+  margin-top: 40px;
+  color: black;
+  font-size: 24px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.banner{
+  margin-top: 110px;
+}
+
+.banner, .banner img{
+  width: 100%;
+}
+
+.empty-list{
+  border: 3px solid #dfdfdf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 153, 0);
+  border-radius: 20px;
+}
