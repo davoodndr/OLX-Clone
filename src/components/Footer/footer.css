@@ -24,6 +24,7 @@
   color: #002f34;
   font-size: 14px;
   font-weight: 700;
+  text-align: left;
 }
 
 .footer-menu-conainer ul{
@@ -86,4 +87,87 @@
   width: 100%;
   max-width: 1200px;
   padding: 15px 0;
+}
+
+
+@media (max-width: 1024px){
+
+  .upper-div{
+    padding: 16px 60px;
+  }
+
+  .lower-div{
+    padding: 0 60px;
+  }
+
+  .lower-div ul li{
+    padding: 0 20px;
+  }
+
+  .lower-div ul li:first-child{
+    padding: 0 20px 0 0 !important;
+    border-right: 1px solid white;
+  }
+
+  .lower-div ul li:nth-child(2){
+    padding: 0 45px !important;
+  }
+}
+
+@media (max-width: 800px){
+
+  .upper-div{
+    padding: 16px 45px;
+  }
+
+  .lower-div{
+    padding: 0 40px;
+  }
+
+  .lower-div ul li{
+    padding: 0 10px;
+  }
+
+  .lower-div ul li:first-child{
+    padding: 0 10px 0 0 !important;
+    border-right: 1px solid white;
+  }
+
+  .lower-div ul li:nth-child(2){
+    padding: 0 30px !important;
+  }
+}
+
+@media (max-width: 500px){
+
+  .upper-div{
+    padding: 16px 30px;
+  }
+
+  .lower-div{
+    padding: 0 30px;
+  }
+
+  .lower-div ul{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lower-div ul li{
+    padding: 0 10px;
+  }
+
+  .lower-div ul li:first-child{
+    padding: 0 10px 0 0 !important;
+    border-right: 1px solid white;
+  }
+
+  .lower-div ul li:nth-child(2){
+    padding: 0 40px !important;
+  }
+
+  .lower-div ul li:nth-child(4){
+    align-items: start;
+    padding-left: 0;
+  }
+
 }

@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { Product } from "./Utils/Interfaces";
 
 const firebaseConfig = {
-  apiKey: process.env.GOOGLE_API_KEY,
+  apiKey: "AIzaSyD8wBlL8PWOKWhijxjKjECtU6PpE9R65pY",
   authDomain: "my-react-olx-clone.firebaseapp.com",
   projectId: "my-react-olx-clone",
   storageBucket: "my-react-olx-clone.firebasestorage.app",
