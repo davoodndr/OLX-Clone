@@ -14,12 +14,13 @@ export const Login = () => {
   const context = useContext(AuthContext);
   if(!context) throw new Error("AuthContext must be used within an AuthProvider");
     
-  const { setLogState }  = context;
+  const { setLogState, setLoading }  = context;
   const navigate = useNavigate();
 
   //login-function
   const user_auth = async (e:FormEvent) => {
     e.preventDefault();
+    setLoading(true)
     if(email && password){
       const user = await login({email, password})
       if(user){
@@ -29,6 +30,7 @@ export const Login = () => {
     }else{
       toast.error('Please provide email and password')
     }
+    setLoading(false)
   }
 
   return (

@@ -1,10 +1,9 @@
 import '../Auth/login.css'
 import './addProduct.css'
 import "react-datepicker/dist/react-datepicker.css";
-import { NavBar } from "../../components/Navbar/NavBar"
 import OlxLogo from "../../assets/OlxLogo"
 import placeholder from '../../assets/palce_holder.png'
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useContext, useState } from 'react'
 import { uploadImage } from '../../Utils/Cloudinery'
 import { Product } from '../../Utils/Interfaces'
 import { addProduct } from '../../Firebase'
@@ -12,10 +11,18 @@ import { useNavigate } from 'react-router'
 import DatePicker from 'react-datepicker'
 import moment from 'moment';
 import { toast } from 'react-toastify';
-import { Spinner } from '../../components/Spinner';
+import { AuthContext } from '../../Utils/AuthProvider';
 
 
 export const AddProduct = () => {
+
+  const context = useContext(AuthContext);
+  
+  if(!context){
+    throw new Error("AuthContext must be used within an AuthProvider");
+  }
+
+  const { setLoading } = context;
 
   const navigate = useNavigate()
 
@@ -28,7 +35,6 @@ export const AddProduct = () => {
   const [date, setDate] = useState(moment().format('YYYY-MM-DDTHH:mm:ssZ'));
   const [image, setImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState('');
-  const [loading, setLoading] = useState(false);
 
   const handleDateChange = (e: Date | null) => {
     setDate(moment(e).format('YYYY-MM-DDTHH:mm:ssZ'))
@@ -89,8 +95,6 @@ export const AddProduct = () => {
   
   return (
     <>
-      <Spinner loading={loading} />
-      <NavBar />
       <div className="signupContainer">
         <div className="signupForm add-product-container">
           <div className="add-product-wrapper">

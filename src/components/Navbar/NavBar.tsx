@@ -3,24 +3,24 @@ import './navbar.css'
 import { IoSearch } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, useNavigate } from 'react-router';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { auth } from '../../Firebase';
 import { AuthContext } from '../../Utils/AuthProvider';
 import { onAuthStateChanged } from 'firebase/auth';
 
 interface NavBarProps{
-  search?:string;
-  setQuery?: (value:string) => void;
-  ref: React.RefObject<HTMLDivElement | null>;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
-export const NavBar:React.FC<NavBarProps> = React.forwardRef(({search, setQuery},ref) => {
+export const NavBar:React.FC<NavBarProps> = React.forwardRef((_props, ref) => {
 
   const context = useContext(AuthContext);
+
   if(!context){
     throw new Error("AuthContext must be used within an AuthProvider");
   }
-  const { isLogged, setLogState }  = context;
+  const { isLogged, setLogState, setSearchQuery }  = context;
+  const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,6 +30,21 @@ export const NavBar:React.FC<NavBarProps> = React.forwardRef(({search, setQuery}
       }
     })
   },[])
+
+  const handleSearch = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value)
+  }
+
+  // debounce search
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setSearchQuery(query);
+    },500)
+
+    return () => clearTimeout(timer);
+
+  },[query])
 
   const handleAuthState = () => {
     if(isLogged){
@@ -56,7 +71,7 @@ export const NavBar:React.FC<NavBarProps> = React.forwardRef(({search, setQuery}
           </span>
         </div>
         <div className='search'>
-          <input type="text" placeholder='Search......' value={search} onChange={e => setQuery?.(e.target.value)} />
+          <input type="text" placeholder='Search......' value={query} onChange={handleSearch} />
           <span className='search-icon'>
             <IoSearch size={25} />
           </span>

@@ -6,7 +6,7 @@ interface SubNavProps{
   setCategory: (category:string) => void;
 }
 
-export const SubNav: React.FC<SubNavProps> =({setCategory}) => {
+export const SubNav: React.FC<SubNavProps> = ({setCategory}) => {
 
   const [isOpen, setIsOpen] = useState(false);
 

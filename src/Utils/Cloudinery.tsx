@@ -5,11 +5,11 @@ export const uploadImage = async (file:File) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", "olx_image");  
-    formData.append("cloud_name", process.env.CLOUD_NAME as string);   
+    formData.append("cloud_name", "dzqtv54q8");   
 
     // Send the image data to Cloudinary
     const response = await axios.post(
-      `https://api.cloudinary.com/v1_1/${process.env.CLOUD_NAME}/image/upload`,
+      `https://api.cloudinary.com/v1_1/dzqtv54q8/image/upload`,
       formData,
       {
         headers: {
